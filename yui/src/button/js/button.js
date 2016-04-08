@@ -125,7 +125,7 @@ var COMPONENTNAME = 'atto_chemrender',
             '<label for="{{elementid}}_{{CSS.OPTION_CONSOLE_COMMANDS}}" class="sameline">{{get_string "optionconsolecommand" component}}' +
             '<span class="helptooltip">' +
             '<a href="/help.php?component=atto_chemrender&identifier=optionconsolecommand&lang=en" title="{{get_string "optionconsolecommandhelp" component}}" target="_blank">' +
-            '<img class="icon iconhelp {{CSS.OPTION_CONSOLE_COMMANDS_HELPLINK}}" aria-hidden="true" role="presentation" width="16" height="16" src="/lib/editor/atto/plugins/chemrender/pix/help.svg" />' +
+            '<img class="icon iconhelp {{CSS.OPTION_CONSOLE_COMMANDS_HELPLINK}}" aria-hidden="true" role="presentation" width="16" height="16" src="{{wwwroot}}/lib/editor/atto/plugins/chemrender/pix/help.svg" />' +
             '</a>' +
             '</span>' +
             '</label>' +
@@ -158,7 +158,7 @@ var COMPONENTNAME = 'atto_chemrender',
             '<form class="atto_form">' +
             '<div class="{{CSS.ENTRY_CONTAINER}}">' +
             '<p/>' +
-            '<iframe id="{{elementid}}_{{CSS.CHEMDOODLE_SKETCHER}}" src="/lib/editor/atto/plugins/chemrender/iframe_sketcher.php" name="qualtrics" scrolling="auto" frameborder="no" align="center" height="400px" width="600px"></iframe>' +
+            '<iframe id="{{elementid}}_{{CSS.CHEMDOODLE_SKETCHER}}" src="{{wwwroot}}/lib/editor/atto/plugins/chemrender/iframe_sketcher.php" name="qualtrics" scrolling="auto" frameborder="no" align="center" height="400px" width="600px"></iframe>' +
             '<br/>' +
             '<label for="{{elementid}}_{{CSS.OPTION_WIDTH}}" class="sameline">{{get_string "width" component}}</label>' +
             '<input class="{{CSS.OPTION_WIDTH}}" type="number" value="300" id="{{elementid}}_{{CSS.OPTION_WIDTH}}" size="8" min="1" max="1000"/>' +
@@ -183,7 +183,7 @@ var COMPONENTNAME = 'atto_chemrender',
             '<label for="{{elementid}}_{{CSS.OPTION_CONSOLE_COMMANDS}}" class="sameline">{{get_string "optionconsolecommand" component}}' +
             '<span class="helptooltip">' +
             '<a href="/help.php?component=atto_chemrender&identifier=optionconsolecommand&lang=en" title="{{get_string "optionconsolecommandhelp" component}}" target="_blank">' +
-            '<img class="icon iconhelp {{CSS.OPTION_CONSOLE_COMMANDS_HELPLINK}}" aria-hidden="true" role="presentation" width="16" height="16" src="/lib/editor/atto/plugins/chemrender/pix/help.svg" />' +
+            '<img class="icon iconhelp {{CSS.OPTION_CONSOLE_COMMANDS_HELPLINK}}" aria-hidden="true" role="presentation" width="16" height="16" src="{{wwwroot}}/lib/editor/atto/plugins/chemrender/pix/help.svg" />' +
             '</a>' +
             '</span>' +
             '</label>' +
@@ -1258,7 +1258,8 @@ Y.namespace('M.atto_chemrender').Button = Y.Base.create('button', Y.M.editor_att
             elementid: ELEMENTID,
             showFilepicker: canShowFilepicker,
             component: COMPONENTNAME,
-            CSS: CSS
+            CSS: CSS,
+            wwwroot: M.cfg.wwwroot
         }));
 
         this._content.one(SELECTORS.PREVIEW_BUTTON).on('click', this._updatePreview, this);
@@ -1295,7 +1296,8 @@ Y.namespace('M.atto_chemrender').Button = Y.Base.create('button', Y.M.editor_att
             elementid: ELEMENTID,
             showFilepicker: canShowFilepicker,
             component: COMPONENTNAME,
-            CSS: CSS
+            CSS: CSS,
+            wwwroot: M.cfg.wwwroot
         }));
 
         this._content.one(SELECTORS.PREVIEW_SKETCHER_BUTTON).on('click', this._sketcherPreview, this);
