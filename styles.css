@@ -4,12 +4,13 @@
  *
  * @package    atto_chemrender
  * @copyright  2016 UC Regents
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-.atto_chemrender_preview_chemdoodle_iframe {   
+.atto_chemrender_preview_chemdoodle_iframe {
     border: 0px;
 }
-.moodle-dialogue-base .moodle-dialogue .atto_chemrender_entry_container, 
+.moodle-dialogue-base .moodle-dialogue .atto_chemrender_entry_container,
 .moodle-dialogue-base .moodle-dialogue .atto_chemrender_preview_container {
     float:left;
     padding-bottom: 20px;
