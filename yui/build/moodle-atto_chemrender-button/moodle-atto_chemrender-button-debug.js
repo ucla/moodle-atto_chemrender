@@ -312,7 +312,7 @@ Y.namespace('M.atto_chemrender').Button = Y.Base.create('button', Y.M.editor_att
                         }, this, e));
                     }, this));
 
-            Y.Get.js(['/filter/chemrender/lib/chemdoodle/ChemDoodleWeb.js', '/filter/chemrender/lib/chemdoodle/uis/ChemDoodleWeb-uis.js'],
+            Y.Get.js([url + '/filter/chemrender/lib/chemdoodle/ChemDoodleWeb.js', url + '/filter/chemrender/lib/chemdoodle/uis/ChemDoodleWeb-uis.js'],
                     function (err) {
                         if (err) {
                             return;
