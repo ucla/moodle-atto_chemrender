@@ -66,13 +66,19 @@ function atto_chemrender_strings_for_js() {
  * @param stdClass $fpoptions - unused.
  */
 function atto_chemrender_params_for_js($elementid, $options, $fpoptions) {
+    global $CFG;
 
+    // Check that ChemRender filter is active by processing sample text with the current filter set.
+    $chemrendertext = '<a href="' . $CFG->wwwroot . '/chemrender/test.mol?width=300&amp;height=300&amp;renderer=chemdoodle&amp;sketcheroutput=true">H4sIAAAAAAAAA41Ouw7CMAzc8xX3A6RuCkNYU8YylpmGoCIldUWD8vsNLQjYsG6wfQ9dw97Zh3e43jnA9C7UzJd8n1wHw2HkwQ1xEqKPcdwXRUpJ3myW+XM3SctBAAooAfrCZ7TWaBURZR02JLdVReumdrQoSWaWYPAb8YRY+ZcH/3pyGVW+eyy/Bjgc6xlx/xDl7AAAAA==</a>';
+    $result = format_text($chemrendertext, true, $options);
+    $chemrenderfilteractive = ($chemrendertext !== $result);
     $context = $options['context'];
     if (!$context) {
         $context = context_system::instance();
     }
 
     return array(
+        'chemrenderfilteractive' => $chemrenderfilteractive,
         'contextid' => $context->id,
     );
 }

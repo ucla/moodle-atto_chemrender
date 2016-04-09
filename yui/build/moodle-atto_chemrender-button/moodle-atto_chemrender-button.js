@@ -254,8 +254,8 @@ Y.namespace('M.atto_chemrender').Button = Y.Base.create('button', Y.M.editor_att
 
     _fileExtensionSketcher: ["mol"],
     initializer: function () {
-        // Require access to Filepicker.
-        if (this.get('host').canShowFilepicker('media')) {
+        // Require Filepicker access and that the ChemRender filter is active
+        if (this.get('host').canShowFilepicker('media') && this.get('chemrenderfilteractive')) {
             var items = [];
             iconfolder = M.cfg.wwwroot + '/lib/editor/atto/plugins/chemrender/ajax.php';
             url = M.cfg.wwwroot;
@@ -312,7 +312,7 @@ Y.namespace('M.atto_chemrender').Button = Y.Base.create('button', Y.M.editor_att
                         }, this, e));
                     }, this));
 
-            Y.Get.js(['/filter/chemrender/lib/chemdoodle/ChemDoodleWeb.js', '/filter/chemrender/lib/chemdoodle/uis/ChemDoodleWeb-uis.js'],
+            Y.Get.js([url + '/filter/chemrender/lib/chemdoodle/ChemDoodleWeb.js', url + '/filter/chemrender/lib/chemdoodle/uis/ChemDoodleWeb-uis.js'],
                     function (err) {
                         if (err) {
                             return;
@@ -1313,6 +1313,16 @@ Y.namespace('M.atto_chemrender').Button = Y.Base.create('button', Y.M.editor_att
     }
 }, {
     ATTRS: {
+        /**
+         * Whether the TeX filter is currently active.
+         *
+         * @attribute texfilteractive
+         * @type Boolean
+         */
+        chemrenderfilteractive: {
+            value: false
+        },
+        
         /**
          * The contextid to use when generating this preview.
          *
