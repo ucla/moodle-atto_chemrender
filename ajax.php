@@ -26,10 +26,13 @@ define('AJAX_SCRIPT', true);
 
 require_once(dirname(__FILE__) . '/../../../../../config.php');
 
+global $CFG;
+$wwwroot = $CFG->wwwroot;
+
 $contextid = required_param('contextid', PARAM_INT);
 
 list($context, $course, $cm) = get_context_info_array($contextid);
-$PAGE->set_url('/lib/editor/atto/plugins/chemrender/ajax.php');
+$PAGE->set_url($wwwroot . '/lib/editor/atto/plugins/chemrender/ajax.php');
 $PAGE->set_context($context);
 
 require_login($course, false, $cm);

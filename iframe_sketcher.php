@@ -21,15 +21,19 @@
  * @copyright  2016 UC Regents
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+require_once(dirname(__FILE__) . '/../../../../../config.php');
+
+global $CFG;
+$wwwroot = $CFG->wwwroot;
 
 echo <<< EOT
 <html>
     <head>
         <meta http-equiv="X-UA-Compatible" content="chrome=1">
-        <link rel="stylesheet" href="/filter/chemrender/lib/chemdoodle/ChemDoodleWeb.css" type="text/css">
-        <link rel="stylesheet" href="/filter/chemrender/lib/chemdoodle/uis/jquery-ui-1.10.3.custom.css" type="text/css">
-        <script type="text/javascript" src="/filter/chemrender/lib/chemdoodle/ChemDoodleWeb.js"></script>
-        <script type="text/javascript" src="/filter/chemrender/lib/chemdoodle/uis/ChemDoodleWeb-uis.js"></script>
+        <link rel="stylesheet" href="$wwwroot/filter/chemrender/lib/chemdoodle/ChemDoodleWeb.css" type="text/css">
+        <link rel="stylesheet" href="$wwwroot/filter/chemrender/lib/chemdoodle/uis/jquery-ui-1.10.3.custom.css" type="text/css">
+        <script type="text/javascript" src="$wwwroot/filter/chemrender/lib/chemdoodle/ChemDoodleWeb.js"></script>
+        <script type="text/javascript" src="$wwwroot/filter/chemrender/lib/chemdoodle/uis/ChemDoodleWeb-uis.js"></script>
         <title>ChemDoodle Web Component Sketcher (Full Sketcher)</title>
     </head>
     <body>
