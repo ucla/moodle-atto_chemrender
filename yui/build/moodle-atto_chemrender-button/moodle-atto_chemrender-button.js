@@ -1134,7 +1134,7 @@ Y.namespace('M.atto_chemrender').Button = Y.Base.create('button', Y.M.editor_att
             previewNode.setHTML('');
 
             // Load JS into iframe (for JSmol).
-            scriptArray.push('/theme/yui_combo.php?rollup/3.15.0_1/yui-moodlesimple.js');
+            scriptArray.push(M.cfg.wwwroot + '/theme/yui_combo.php?rollup/3.15.0_1/yui-moodlesimple.js');
 
             var iframeId = "#" + ELEMENTID + "_" + CSS.PREVIEW_CHEMDOODLE;
             var frame = Y.one(iframeId);
